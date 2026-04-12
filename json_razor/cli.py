@@ -54,6 +54,10 @@ def main():
     )
     args = parser.parse_args()
 
+    if args.input is None and sys.stdin.isatty():
+        parser.print_help()
+        sys.exit(0)
+
     fmt = args.format or detect_format(args.input)
 
     if args.input:
