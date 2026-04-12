@@ -1,4 +1,4 @@
-# JSON's Razor — Cut the fat.
+# JSON's Razor — Cut the fat
 
 Reduces JSON, YAML, and NDJSON volume by collapsing repeated structures while preserving the schema.
 
