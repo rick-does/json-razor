@@ -1,0 +1,52 @@
+{
+  "org": "acme",
+  "departments": [
+    {
+      "name": "engineering",
+      "headcount": 42,
+      "teams": [
+        {
+          "name": "backend",
+          "members": [
+            {"id": 1, "name": "alice", "role": "lead", "skills": ["python", "go", "sql"]},
+            {"id": 2, "name": "bob", "role": "senior", "skills": ["python", "rust"]},
+            {"id": 3, "name": "carol", "role": "mid", "skills": ["go", "kubernetes"]}
+          ]
+        },
+        {
+          "name": "frontend",
+          "members": [
+            {"id": 4, "name": "dave", "role": "lead", "skills": ["typescript", "react", "css"]},
+            {"id": 5, "name": "eve", "role": "senior", "skills": ["typescript", "vue"]}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "data",
+      "headcount": 18,
+      "teams": [
+        {
+          "name": "ml",
+          "members": [
+            {"id": 6, "name": "frank", "role": "lead", "skills": ["python", "pytorch", "spark"]},
+            {"id": 7, "name": "grace", "role": "senior", "skills": ["python", "tensorflow"]}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "platform",
+      "headcount": 11,
+      "teams": [
+        {
+          "name": "infra",
+          "members": [
+            {"id": 8, "name": "hank", "role": "lead", "skills": ["terraform", "kubernetes", "aws"]},
+            {"id": 9, "name": "ivy", "role": "mid", "skills": ["ansible", "linux"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

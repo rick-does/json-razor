@@ -1,0 +1,65 @@
+[
+  {
+    "event_id": "e1a2b3",
+    "type": "page_view",
+    "timestamp": "2024-01-15T08:00:01Z",
+    "user": {"id": "u001", "plan": "free", "country": "US"},
+    "page": "/dashboard",
+    "referrer": "https://google.com/search?q=json+tools",
+    "duration_ms": 1240,
+    "properties": {"loaded_widgets": 4, "ab_group": "control"}
+  },
+  {
+    "event_id": "e2b3c4",
+    "type": "page_view",
+    "timestamp": "2024-01-15T08:00:04Z",
+    "user": {"id": "u002", "plan": "pro", "country": "DE"},
+    "page": "/settings",
+    "referrer": null,
+    "duration_ms": 520,
+    "properties": {"loaded_widgets": 2, "ab_group": "treatment"}
+  },
+  {
+    "event_id": "e3c4d5",
+    "type": "click",
+    "timestamp": "2024-01-15T08:00:07Z",
+    "user": {"id": "u001", "plan": "free", "country": "US"},
+    "target": "button#upgrade",
+    "page": "/dashboard",
+    "referrer": null,
+    "duration_ms": null,
+    "properties": {"button_text": "Upgrade now", "ab_group": "control"}
+  },
+  {
+    "event_id": "e4d5e6",
+    "type": "api_call",
+    "timestamp": "2024-01-15T08:00:09Z",
+    "user": {"id": "u003", "plan": "enterprise", "country": "JP"},
+    "endpoint": "/api/v2/ingest",
+    "method": "POST",
+    "status": 200,
+    "duration_ms": 88,
+    "properties": {"payload_bytes": 14020, "records": 500}
+  },
+  {
+    "event_id": "e5e6f7",
+    "type": "api_call",
+    "timestamp": "2024-01-15T08:00:11Z",
+    "user": {"id": "u004", "plan": "free", "country": "BR"},
+    "endpoint": "/api/v1/query",
+    "method": "GET",
+    "status": 429,
+    "duration_ms": 12,
+    "properties": {"payload_bytes": 0, "records": 0, "error": "rate_limit_exceeded"}
+  },
+  {
+    "event_id": "e6f7g8",
+    "type": "page_view",
+    "timestamp": "2024-01-15T08:00:15Z",
+    "user": {"id": "u005", "plan": "pro", "country": "GB"},
+    "page": "/docs/quickstart",
+    "referrer": "https://bing.com",
+    "duration_ms": 3101,
+    "properties": {"loaded_widgets": 0, "ab_group": "control"}
+  }
+]

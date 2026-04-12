@@ -1,0 +1,62 @@
+services:
+  - name: api-gateway
+    image: nginx:1.25
+    replicas: 3
+    ports:
+      - host: 80
+        container: 80
+      - host: 443
+        container: 443
+    env:
+      - name: LOG_LEVEL
+        value: info
+      - name: TIMEOUT
+        value: "30s"
+    healthcheck:
+      path: /health
+      interval: 10s
+      retries: 3
+
+  - name: user-service
+    image: myapp/users:2.1.0
+    replicas: 2
+    ports:
+      - host: 8080
+        container: 8080
+    env:
+      - name: DB_HOST
+        value: postgres.internal
+      - name: DB_PORT
+        value: "5432"
+      - name: LOG_LEVEL
+        value: debug
+    healthcheck:
+      path: /ping
+      interval: 15s
+      retries: 5
+
+  - name: worker
+    image: myapp/worker:2.1.0
+    replicas: 5
+    ports: []
+    env:
+      - name: QUEUE_URL
+        value: amqp://rabbitmq.internal
+      - name: CONCURRENCY
+        value: "4"
+    healthcheck:
+      path: /status
+      interval: 30s
+      retries: 2
+
+  - name: cache
+    image: redis:7.2
+    replicas: 1
+    ports:
+      - host: 6379
+        container: 6379
+    env: []
+    healthcheck:
+      path: null
+      interval: 5s
+      retries: 3

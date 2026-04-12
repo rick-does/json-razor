@@ -1,0 +1,12 @@
+{"ts":"2024-01-15T08:00:01.001Z","level":"info","msg":"server started","service":"api","host":"pod-1a","port":8080,"pid":42}
+{"ts":"2024-01-15T08:00:01.882Z","level":"info","msg":"server started","service":"api","host":"pod-1b","port":8080,"pid":43}
+{"ts":"2024-01-15T08:00:04.210Z","level":"info","msg":"request","service":"api","host":"pod-1a","method":"GET","path":"/health","status":200,"duration_ms":2}
+{"ts":"2024-01-15T08:00:05.330Z","level":"info","msg":"request","service":"api","host":"pod-1b","method":"POST","path":"/api/v2/ingest","status":200,"duration_ms":91}
+{"ts":"2024-01-15T08:00:06.441Z","level":"warn","msg":"slow query","service":"api","host":"pod-1a","query":"SELECT * FROM events WHERE user_id = $1","duration_ms":820,"threshold_ms":500}
+{"ts":"2024-01-15T08:00:07.552Z","level":"info","msg":"request","service":"api","host":"pod-1a","method":"GET","path":"/api/v1/users","status":200,"duration_ms":34}
+{"ts":"2024-01-15T08:00:08.663Z","level":"error","msg":"connection refused","service":"api","host":"pod-1b","target":"redis.internal:6379","error":"dial tcp: connection refused","retries":3}
+{"ts":"2024-01-15T08:00:09.774Z","level":"info","msg":"request","service":"api","host":"pod-1b","method":"DELETE","path":"/api/v2/sessions/abc123","status":204,"duration_ms":18}
+{"ts":"2024-01-15T08:00:10.885Z","level":"warn","msg":"rate limit hit","service":"api","host":"pod-1a","user_id":"u004","plan":"free","limit":100,"window":"1m"}
+{"ts":"2024-01-15T08:00:11.996Z","level":"info","msg":"cache miss","service":"api","host":"pod-1b","key":"user:u002:profile","ttl_ms":null}
+{"ts":"2024-01-15T08:00:13.107Z","level":"error","msg":"unhandled exception","service":"api","host":"pod-1a","error":"NullPointerException","stack":"at handler.go:142\nat router.go:88\nat main.go:55","request_id":"req-xyz-789"}
+{"ts":"2024-01-15T08:00:14.218Z","level":"info","msg":"request","service":"api","host":"pod-1a","method":"GET","path":"/api/v2/export","status":202,"duration_ms":7}

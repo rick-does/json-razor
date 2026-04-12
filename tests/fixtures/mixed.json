@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "version": 2,
+    "tags": ["production", "v2", null, true, 42, ["nested", "tag"], {"label": "env", "value": "prod"}]
+  },
+  "results": [
+    {"type": "user", "id": 1, "data": {"name": "alice", "score": 98.5}},
+    {"type": "user", "id": 2, "data": {"name": "bob", "score": 73.0}},
+    42,
+    "orphaned string result",
+    null,
+    ["batch", "item", "one"],
+    ["batch", "item", "two"],
+    true,
+    {"type": "system", "code": 200, "message": "ok"}
+  ],
+  "flags": [true, false, true, false],
+  "counts": [0, 1, 2, 3, 100, 999],
+  "empty_array": [],
+  "empty_object": {},
+  "null_field": null,
+  "long_string": "This is a very long string that goes on and on and contains a lot of words that are not particularly useful for understanding the schema of this document but are included here to demonstrate string truncation behavior.",
+  "matrix": [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+  ]
+}
