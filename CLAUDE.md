@@ -6,7 +6,7 @@
 
 The name is a deliberate play on Occam's Razor — the principle of parsimony. JSON is also a homophone for the name Jason, which was the original intent of the JSON creators (Douglas Crockford et al.) when they named the format. Most people missed the joke and pronounce it "Jay-SAWN." JSON's Razor quietly restores that intent.
 
-**One-line description:** Reduces JSON, YAML, and NDJSON volume by collapsing repeated structures while preserving the schema, making the schema easier for you to see.
+**One-line description:** Reduces JSON, YAML, and NDJSON volume by collapsing repeated structures while preserving the schema, making the schema easier for you to read.
 
 ---
 
