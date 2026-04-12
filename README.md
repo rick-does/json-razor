@@ -76,9 +76,3 @@ json-razor app.log --format ndjson           # NDJSON log file
 | JSON | `.json` |
 | YAML | `.yaml`, `.yml` |
 | NDJSON | `.ndjson` |
-
----
-
-## Name
-
-JSON's Razor is a play on Occam's Razor — the principle of parsimony. JSON is also a homophone for the name Jason, which was the original intent when the format was named. Most people missed the joke. JSON's Razor quietly restores it.
