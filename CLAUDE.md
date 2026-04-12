@@ -83,6 +83,60 @@ Fully pipeable. Output is always valid, parseable data in the same format as inp
 
 ---
 
+## Current State
+
+- Package is live on PyPI: `pip install json-razor` works
+- GitHub repo: `git@github.com:rick-does/json-razor.git` (branch: `main`)
+- Current version: `0.1.0` (in `pyproject.toml`)
+- Trusted publishing configured on PyPI — no API tokens needed for future releases
+
+---
+
+## Project Structure
+
+```
+json_razor/
+  __init__.py       # exposes collapse()
+  core.py           # recursive collapse logic, _type_key()
+  formats.py        # load/dump for json, yaml, ndjson
+  cli.py            # argparse CLI entry point
+tests/
+  test_core.py      # 14 unit tests
+  samples/          # sample input files for manual testing
+    simple.json
+    nested.json
+    mixed.json
+    events.json
+    services.yaml
+    app.ndjson
+.github/workflows/
+  tests.yml         # runs pytest on push/PR to main
+  release.yml       # publishes to PyPI + builds executables on version tag
+pyproject.toml      # package config, entry point, dependencies
+```
+
+---
+
+## Releasing
+
+1. Bump `version` in `pyproject.toml`
+2. Commit and push
+3. Tag and push:
+
+```bash
+git tag v0.x.x
+git push origin v0.x.x
+```
+
+This triggers `release.yml` which:
+- Publishes the new version to PyPI via trusted publishing (OIDC, no secrets needed)
+- Builds standalone executables for Linux, macOS, and Windows via PyInstaller
+- Attaches all three binaries to the GitHub release
+
+**Do not** run `twine upload` manually again — that was only needed for the initial name claim.
+
+---
+
 ## Library Stack
 
 | Format | Library |
