@@ -1,0 +1,44 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  pypi:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install build
+      - run: python -m build
+      - uses: pypa/gh-action-pypi-publish@release/v1
+
+  executables:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            name: json-razor-linux
+          - os: macos-latest
+            name: json-razor-macos
+          - os: windows-latest
+            name: json-razor-windows
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e . pyinstaller
+      - run: pyinstaller --onefile --name ${{ matrix.name }} json_razor/cli.py
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/${{ matrix.name }}*
