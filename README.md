@@ -2,7 +2,7 @@
 
 [![tests](https://github.com/rick-does/json-razor/actions/workflows/tests.yml/badge.svg)](https://github.com/rick-does/json-razor/actions/workflows/tests.yml)
 
-Reduces JSON, YAML, and NDJSON volume by collapsing repeated structures while preserving the schema.
+Reduces JSON, YAML, and NDJSON volume by collapsing repeated structures while preserving the schema, making the schema easier for you to see.
 
 Large structured data files are hard to parse — not because the structure is complex, but because repetition obscures it. A list of 10,000 objects with identical shape tells you nothing more than a list of 1. JSON's Razor collapses that repetition to its minimum essential form: one representative example of each repeated structure, at every level of nesting.
 
