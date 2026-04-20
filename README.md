@@ -83,7 +83,7 @@ json-razor app.log --format ndjson           # NDJSON log file
 
 ## Use case: OpenAPI specs
 
-OpenAPI specs are a natural fit for JSON's Razor. They're long, deeply nested, and repeat the same response structures across dozens of endpoints — the schema is there, but buried under noise.
+OpenAPI specs are a natural fit for JSON's Razor. They're long, deeply nested, and repeat the same response structures across dozens of endpoints.
 
 Run the included sample to see it in action:
 
