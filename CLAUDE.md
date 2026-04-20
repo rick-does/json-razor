@@ -149,9 +149,6 @@ This triggers `release.yml` which:
 
 ## Planned Work
 
-### OpenAPI use case documentation
-Add explicit OpenAPI documentation and a sample file to the project. OpenAPI specs are a natural fit — large, verbose, deeply nested YAML/JSON with repeated structures. json-razor collapses them to their essential shape for inspection. Add an `openapi.yaml` sample to `tests/samples/` and call out the use case explicitly in the README.
-
 ### GitHub Action
 Build a thin wrapper GitHub Action that runs json-razor in CI pipelines. Separate repo (`rick-does/json-razor-action`). Takes a file input, runs json-razor, outputs to stdout or writes a file. Publish to GitHub Actions Marketplace. OpenAPI schema inspection in CI is the primary use case to highlight.
 
