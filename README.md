@@ -78,3 +78,21 @@ json-razor app.log --format ndjson           # NDJSON log file
 | JSON | `.json` |
 | YAML | `.yaml`, `.yml` |
 | NDJSON | `.ndjson` |
+
+---
+
+## Use case: OpenAPI specs
+
+OpenAPI specs are a natural fit for JSON's Razor. They're long, deeply nested, and repeat the same response structures across dozens of endpoints — the schema is there, but buried under noise.
+
+Run the included sample to see it in action:
+
+```bash
+json-razor tests/samples/openapi.yaml
+```
+
+You get the full API shape — every path, method, status code, and referenced schema — without the repetition that obscures it. Useful for:
+
+- Reviewing an unfamiliar API quickly
+- Inspecting generated specs in CI before they're published
+- Diffing structural changes between spec versions
