@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "json-razor"
-version = "0.1.2"
+version = "0.1.3"
 description = "Reduces JSON, YAML, and NDJSON volume by collapsing repeated structures while preserving the schema, making the schema easier for you to read."
 readme = "README.md"
 requires-python = ">=3.8"
