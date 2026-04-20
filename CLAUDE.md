@@ -147,10 +147,9 @@ This triggers `release.yml` which:
 
 ---
 
-## Planned Work
+## Related
 
-### GitHub Action
-Build a thin wrapper GitHub Action that runs json-razor in CI pipelines. Separate repo (`rick-does/json-razor-action`). Takes a file input, runs json-razor, outputs to stdout or writes a file. Publish to GitHub Actions Marketplace. OpenAPI schema inspection in CI is the primary use case to highlight.
+- **[json-razor-action](https://github.com/rick-does/json-razor-action)** — GitHub Action wrapper. Published on the Actions Marketplace. Use as `rick-does/json-razor-action@v1`.
 
 ---
 
